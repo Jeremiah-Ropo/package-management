@@ -1,0 +1,29 @@
+{
+  "name": "package-management",
+  "version": "1.0.0",
+  "description": "package management system",
+  "main": "src/server.js",
+  "author": "patrick jeremiah",
+  "license": "UNLICENSED",
+  "private": false,
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon",
+    "lint": "eslint ./src",
+    "format": "prettier --write ./src"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.9.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.3"
+  },
+  "devDependencies": {
+    "eslint": "^9.16.0",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.4.1"
+  }
+}
