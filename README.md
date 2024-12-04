@@ -69,11 +69,14 @@ mutation {
   register(
     name: "Jeremiah Patrick",
     email: "jeremiah@gmail.com",
-    password: "mypassword123"
+    password: "mypassword123",
+    role: "user"
   ) {
     id
     name
-    email
+    email,
+    role,
+    token
   }
 }
 ```

@@ -48,7 +48,7 @@ module.exports = buildSchema(`
       Role of the user (default is 'user', but can either be 'admin' or 'user').
       """
       role: String = "user"
-    ): User
+    ): AuthData
 
     """
     Log in with email and password to receive a JWT token.

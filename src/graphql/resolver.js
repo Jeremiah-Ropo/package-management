@@ -7,9 +7,14 @@ const CustomError = require('../utils/customError');
 
 
 const register = async ({ name, email, password }) => {
+    const userExist = await User.exists({ email });
+    if (userExist) throw new CustomError('User already registered with the email', 400);
+
     const hashedPassword = await bcrypt.hash(password, 12);
     const user = await User.create({ name, email, password: hashedPassword });
-    return user;
+    const token = jwt.sign({ id: user._id, role: user.role }, JWT_SECRET, { expiresIn: '1h' })
+    user.password = undefined;
+    return {user, token};
 }
 
 const login = async ({ email, password }) => {
@@ -20,7 +25,7 @@ const login = async ({ email, password }) => {
     if (!isMatch) throw new CustomError('Incorrect password', 401);
 
     const token = jwt.sign({ id: user.id, role: user.role }, JWT_SECRET, { expiresIn: '1h' });
-    return { token, userId: user.id };
+    return { token, user};
   }
 
 const packages = async () => await Package.find();
