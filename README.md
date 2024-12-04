@@ -46,6 +46,7 @@ A GraphQL-based package management system with authentication, CRUD operations, 
 |----------------|-----------------------------------|
 | `MONGO_URI`    | MongoDB connection string         |
 | `JWT_SECRET`   | Secret key for JWT authentication |
+| `PORT`         | Port number for the server        |
 
 ## GraphQL Schema
 ### Queries
