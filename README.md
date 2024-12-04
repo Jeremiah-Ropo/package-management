@@ -39,7 +39,7 @@ A GraphQL-based package management system with authentication, CRUD operations, 
    yarn start
    ```
 
-5. Access GraphiQL at `https://package-management-e57ef6a650d0.herokuapp.com/graphql`.
+5. Access GraphiQL at `https://package-management-e57ef6a650d0.herokuapp.com/graphql`(https://package-management-e57ef6a650d0.herokuapp.com/graphql).
 
 ## Environment Variables
 | Variable       | Description                       |
