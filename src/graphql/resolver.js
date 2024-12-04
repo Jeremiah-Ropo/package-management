@@ -5,7 +5,7 @@ const User = require("../models/user");
 const { JWT_SECRET } = require("../config/variables");
 const CustomError = require("../utils/customError");
 
-const register = async ({ name, email, password }) => {
+const register = async ({ name, role, email, password }) => {
   const userExist = await User.exists({ email });
   if (userExist)
     throw new CustomError("User already registered with the email", 400);
