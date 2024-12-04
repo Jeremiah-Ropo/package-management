@@ -50,15 +50,16 @@ A GraphQL-based package management system with authentication, CRUD operations, 
 
 ## GraphQL Schema
 ### Queries
-- **packages(id: ID)**: Get all packages or a package by its ID.
+- **packages**: Get all packages.
+- **packages(id: ID)**: Get a package by its ID.
 - **user**: Get the currently authenticated user's information.
 
 ### Mutations
 - **register**: Register a new user.
 - **login**: Log in a user and receive a JWT token.
 - **createPackage**: Create a new package (Admin only).
-- **updatePackage**: Update an existing package (Admin only).
-- **deletePackage**: Delete a package by ID (Admin only).
+- **updatePackage**: Update an existing package (Authenticated user only).
+- **deletePackage**: Delete a package by ID (Authenticated user only).
 
 ## Common Queries and Mutations
 
