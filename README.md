@@ -157,7 +157,7 @@ query {
 ### Fetch a Package by ID
 ```graphql
 query {
-  packages(id: "63fa9f1b1234567890abcd12") {
+  package(id: "63fa9f1b1234567890abcd12") {
     id
     name
     description
