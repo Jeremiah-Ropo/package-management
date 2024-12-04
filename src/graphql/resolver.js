@@ -11,7 +11,7 @@ const register = async ({ name, email, password }) => {
     throw new CustomError("User already registered with the email", 400);
 
   const hashedPassword = await bcrypt.hash(password, 12);
-  const user = await User.create({ name, email, password: hashedPassword });
+  const user = await User.create({ name, email, password: hashedPassword, role });
   const token = jwt.sign({ id: user._id, role: user.role }, JWT_SECRET, {
     expiresIn: "1h",
   });
